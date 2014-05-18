@@ -13,3 +13,7 @@ This README outlines the details of collaborating on this Ember application.
 Visit your app at http://localhost:4200.
 
 For more information on ember-cli commands, visit [http://iamstef.net/ember-cli/](http://iamstef.net/ember-cli/).
+
+## Contributing
+
+See the [contributing guide](https://github.com/exercism/website/blob/master/CONTRIBUTING.md).
