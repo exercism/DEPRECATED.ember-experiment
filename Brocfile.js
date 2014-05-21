@@ -1,6 +1,8 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var pickFiles = require('broccoli-static-compiler');
+var mergeTrees = require('broccoli-merge-trees');
 
 var app = new EmberApp({
   name: require('./package.json').name,
@@ -12,6 +14,9 @@ var app = new EmberApp({
 
   getEnvJSON: require('./config/environment')
 });
+
+//JSHint tests are current QUnit and fail to run
+app.hinting = false;
 
 // Use this to add additional libraries to the generated output files.
 app.import('vendor/ember-data/ember-data.js');
@@ -30,5 +35,50 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   ]
 });
 
+var mochaFiles = pickFiles('vendor', {
+  srcDir: '/mocha',
+  files: [
+    'mocha.css', 'mocha.js'
+  ],
+  destDir: '/assets/'
+});
 
-module.exports = app.toTree();
+var chaiFiles = pickFiles('vendor', {
+  srcDir: '/chai',
+  files: [
+    'chai.js'
+  ],
+  destDir: '/assets/'
+});
+
+var sinonFiles = pickFiles('vendor', {
+  srcDir: '/sinon/lib',
+  files: [
+    'sinon.js'
+  ],
+  destDir: '/assets/'
+});
+
+var sinonChaiFiles = pickFiles('vendor', {
+  srcDir: '/sinon-chai/lib',
+  files: [
+    'sinon-chai.js'
+  ],
+  destDir: '/assets/'
+});
+
+var mochaAdapter = pickFiles('vendor', {
+  srcDir: '/ember-mocha-adapter',
+  files: [
+    'adapter-qunit.js'
+  ],
+  destDir: '/assets/'
+});
+
+var testTrees = mergeTrees([mochaFiles, mochaAdapter, chaiFiles, sinonFiles, sinonChaiFiles], {
+     overwrite: true
+});
+
+var fullTree = mergeTrees([app.toTree(), testTrees]);
+
+module.exports = fullTree;

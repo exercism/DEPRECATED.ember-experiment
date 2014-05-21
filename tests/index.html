@@ -10,18 +10,44 @@
     {{BASE_TAG}}
 
     <link rel="stylesheet" href="assets/exercism.css">
-    <link rel="stylesheet" href="assets/qunit.css">
+    <link rel="stylesheet" href="assets/mocha.css">
     <style>
       #ember-testing-container {
-        position: absolute;
+        position: fixed;
         background: white;
         bottom: 0;
         right: 0;
         width: 640px;
-        height: 384px;
+        height: 384px;;
         overflow: auto;
         z-index: 9999;
         border: 1px solid #ccc;
+        max-height: 0;
+        transition: max-height 0.3s;
+        transition-timing-function: ease-out;
+      }
+      #hide-testing-container {
+        position: absolute;
+        text-align: center;
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-size: 14px;
+        background: white;
+        bottom: 0;
+        right: 0;
+        width: 50px;
+        height: 20px;
+        overflow: auto;
+        z-index: 9999;
+        border: 1px solid #ccc;
+        cursor:pointer;
+        transition: bottom 0.3s;
+        transition-timing-function: ease-out;
+      }
+      #ember-testing-container.show-testing-container {
+        max-height: 384px;
+      }
+      #hide-testing-container.show-testing-container {
+        bottom: 384px;
       }
       #ember-testing {
         zoom: 50%;
@@ -29,18 +55,28 @@
     </style>
   </head>
   <body>
-    <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
+    <div id="mocha"></div>
+    <div id="hide-testing-container">Show</div>
 
     <script>
       window.ENV = {{ENV}};
     </script>
-    <script src="assets/qunit.js"></script>
+    <script src="assets/mocha.js"></script>
     <script src="assets/exercism.js"></script>
+    <script src="assets/adapter-qunit.js"></script>
+    <script src="assets/chai.js"></script>
+    <script src="assets/sinon.js"></script>
+    <script src="assets/sinon-chai.js"></script>
     <script src="testem.js"></script>
     <script>
       require('exercism/tests/test-helper');
       require('exercism/tests/test-loader');
+
+      $('#hide-testing-container').click(function() {
+        $('#ember-testing-container').toggleClass('show-testing-container');
+        var newText = $(this).text() == 'Hide' ? 'Show' : 'Hide'
+        $(this).html(newText).toggleClass('show-testing-container');
+      });
     </script>
   </body>
 </html>

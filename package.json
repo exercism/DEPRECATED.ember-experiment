@@ -27,6 +27,8 @@
     "express": "^4.1.1",
     "glob": "^3.2.9",
     "loom-generators-ember-appkit": "^1.1.1",
-    "originate": "0.1.5"
+    "originate": "0.1.5",
+    "broccoli-merge-trees": "^0.1.3",
+    "broccoli-static-compiler": "^0.1.4"
   }
 }

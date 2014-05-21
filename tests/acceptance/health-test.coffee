@@ -1,12 +1,13 @@
 `import startApp from '../helpers/start-app';`
 
 App = null
-module 'Integration: Health',
+
+suite 'Acceptance: Health',
   setup: -> App = startApp()
-  teardown: -> App.reset()
+  teardown: -> Ember.run(App, 'destroy')
 
 test 'the homepage renders', ->
   visit('/')
 
   andThen ->
-    equal(find('#title').text(), 'Welcome to Exercism')
+    expect(find('#title').text()).to.equal('Welcome to Exercism')
