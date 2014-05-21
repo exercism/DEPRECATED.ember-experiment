@@ -1,19 +1,25 @@
-# Exercism
+# Exercism [![Build Status](https://travis-ci.org/exercism/website.png?branch=master)](https://travis-ci.org/exercism/website)
 
 This README outlines the details of collaborating on this Ember application.
 
-## Getting Started
+## Installation
 
 * `git clone` this repository
 * `npm install`
 * `bower install`
+
+## Running
+
+* `ember server`
+* Visit your app at http://localhost:4200.
+
+## Running Tests
+
 * `ember test`
-* `ember serve` to run the server
+* `ember test --server`
 
-Visit your app at http://localhost:4200.
+## Building
 
-For more information on ember-cli commands, visit [http://iamstef.net/ember-cli/](http://iamstef.net/ember-cli/).
+* `ember build`
 
-## Contributing
-
-See the [contributing guide](https://github.com/exercism/website/blob/master/CONTRIBUTING.md).
+For more information on using ember-cli, visit [http://iamstef.net/ember-cli/](http://iamstef.net/ember-cli/).
