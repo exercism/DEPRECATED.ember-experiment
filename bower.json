@@ -14,6 +14,7 @@
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.1",
     "mocha": "~1.17.0",
     "chai": "~0.3.1",
+    "sinon": "~1.10.0",
     "sinon-chai": "~2.5.0",
     "ember-mocha-adapter": "https://github.com/WMeldon/ember-mocha-adapter.git#qunit"
   }
