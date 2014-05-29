@@ -1,0 +1,7 @@
+h1 problems in #{lang}
+
+ul
+  li
+    link-to 'Bob' 'problem' lang 'bob'
+  li
+    link-to 'Anagram' 'problem' lang 'anagram'

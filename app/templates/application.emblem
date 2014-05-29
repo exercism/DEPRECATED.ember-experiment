@@ -1,3 +1,8 @@
-h2#title Welcome to Exercism
+#title Exercism
+
+nav
+  ul
+    li
+      link-to 'Explore' 'explore'
 
 outlet

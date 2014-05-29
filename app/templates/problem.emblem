@@ -1,0 +1,9 @@
+h1 #{problem} in #{lang}
+
+ul
+  li
+    link-to 'Details' 'problem' lang problem
+  li
+    link-to 'Exercises' 'problem.exercises' lang problem
+
+outlet

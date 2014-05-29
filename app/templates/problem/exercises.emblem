@@ -1,0 +1,5 @@
+h2 #{lang} exercises for #{problem}
+
+ul
+  li
+    link-to "Someone's Exercise" 'exercise' 'someones-exercise'

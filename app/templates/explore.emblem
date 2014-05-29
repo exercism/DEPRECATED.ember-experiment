@@ -1,0 +1,11 @@
+h1 Explore
+
+ul
+  li
+    link-to 'Ruby' 'problems.language' 'ruby'
+  li
+    link-to 'JavaScript' 'problems.language' 'javascript'
+  li
+    link-to 'Go' 'problems.language' 'go'
+  li
+    link-to 'Elixir' 'problems.language' 'elixir'

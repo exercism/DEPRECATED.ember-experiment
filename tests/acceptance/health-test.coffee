@@ -10,4 +10,4 @@ test 'the homepage renders', ->
   visit('/')
 
   andThen ->
-    expect(find('#title').text()).to.equal('Welcome to Exercism')
+    expect(find('#title').text()).to.equal('Exercism')
