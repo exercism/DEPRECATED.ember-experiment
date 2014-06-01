@@ -69,6 +69,25 @@
     <script src="assets/sinon-chai.js"></script>
     <script src="testem.js"></script>
     <script>
+      // Fix stats nav links from navigating to the wrong URL
+      mocha.suite.beforeAll(function() {
+        $('#mocha-stats a').click(function(e) {
+          e.preventDefault();
+        });
+      });
+
+      // Fix links to single tests
+      mocha.suite.afterEach(function() {
+        $('.suite a').each(function() {
+          var link = $(this),
+              href = link.attr('href');
+
+          if(/^\?grep/.test(href)) {
+            link.attr('href', 'tests/' + href);
+          }
+        });
+      });
+
       require('exercism/tests/test-helper');
       require('exercism/tests/test-loader');
 
