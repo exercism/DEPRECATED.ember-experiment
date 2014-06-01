@@ -2,12 +2,12 @@
 
 App = null
 
-suite 'Acceptance: Health',
+suite 'Acceptance: Guests visiting the homepage',
   setup: -> App = startApp()
   teardown: -> Ember.run(App, 'destroy')
 
-test 'the homepage renders', ->
+test 'they are greeted', ->
   visit('/')
 
   andThen ->
-    expect(find('#title').text()).to.equal('Exercism')
+    expect(find('h1').text()).to.equal('Welcome')
