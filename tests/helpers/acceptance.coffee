@@ -1,4 +1,4 @@
-`import startApp from '../helpers/start-app';`
+`import startApp from './start-app';`
 
 acceptance = (suiteName) ->
   App = null
