@@ -11,6 +11,7 @@
     "loader": "stefanpenner/loader.js#1.0.0",
     "ember-resolver": "stefanpenner/ember-jj-abrams-resolver#master",
     "ic-ajax": "~1.x",
+    "bourbon": "~3.1.8",
 
     "qunit": "~1.12.0",
     "ember-qunit": "https://github.com/WMeldon/ember-qunit.git#mocha",
