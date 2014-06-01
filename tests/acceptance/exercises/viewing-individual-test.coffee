@@ -1,10 +1,4 @@
-`import startApp from '../../helpers/start-app';`
-
-App = null
-
-suite 'Acceptance: Viewing individual exercises',
-  setup: -> App = startApp()
-  teardown: -> Ember.run(App, 'destroy')
+acceptance('Viewing individual exercises')
 
 test 'I navigate to an exercise and it brings me to the first iteration', ->
   visit('/problem/ruby/bob/exercises')

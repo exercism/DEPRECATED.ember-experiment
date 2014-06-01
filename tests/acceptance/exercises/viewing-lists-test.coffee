@@ -1,10 +1,4 @@
-`import startApp from '../../helpers/start-app';`
-
-App = null
-
-suite 'Acceptance: Viewing lists of exercises for a problem',
-  setup: -> App = startApp()
-  teardown: -> Ember.run(App, 'destroy')
+acceptance('Viewing lists of exercises for a problem')
 
 test 'I navigate to exercises for a problem', ->
   visit('/problem/ruby/bob')

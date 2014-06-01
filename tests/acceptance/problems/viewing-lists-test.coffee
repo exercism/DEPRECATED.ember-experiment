@@ -1,10 +1,4 @@
-`import startApp from '../../helpers/start-app';`
-
-App = null
-
-suite 'Acceptance: Viewing lists of problems',
-  setup: -> App = startApp()
-  teardown: -> Ember.run(App, 'destroy')
+acceptance('Viewing lists of problems')
 
 test 'I view a list of problems', ->
   visit('/problems')

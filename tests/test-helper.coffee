@@ -1,5 +1,8 @@
 `import resolver from './helpers/resolver';`
 `import { setResolver } from 'ember-qunit';`
+`import acceptance from './helpers/acceptance';`
+
+window.acceptance = acceptance
 
 setResolver(resolver)
 

@@ -1,10 +1,4 @@
-`import startApp from '../../helpers/start-app';`
-
-App = null
-
-suite 'Acceptance: Viewing individual problems',
-  setup: -> App = startApp()
-  teardown: -> Ember.run(App, 'destroy')
+acceptance('Viewing individual problems')
 
 test 'I navigate to a problem', ->
   visit('/problems/ruby')

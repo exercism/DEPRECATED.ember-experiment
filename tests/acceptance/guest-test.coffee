@@ -1,10 +1,4 @@
-`import startApp from '../helpers/start-app';`
-
-App = null
-
-suite 'Acceptance: Guests visiting the homepage',
-  setup: -> App = startApp()
-  teardown: -> Ember.run(App, 'destroy')
+acceptance('Guests visiting the homepage')
 
 test 'they are greeted', ->
   visit('/')

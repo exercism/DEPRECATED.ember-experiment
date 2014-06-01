@@ -1,10 +1,4 @@
-`import startApp from '../../helpers/start-app';`
-
-App = null
-
-suite 'Acceptance: Viewing iterations for an exercise',
-  setup: -> App = startApp()
-  teardown: -> Ember.run(App, 'destroy')
+acceptance('Viewing iterations for an exercise')
 
 test 'I navigate to an iteration for an exercise', ->
   visit('/exercise/someones-exercise/1')
