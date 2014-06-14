@@ -7,24 +7,26 @@
 // Dependencies
 // =============================
 @import "dependencies/variables";
-@import "dependencies/helpers";
+@import "dependencies/mixins";
 
 // =============================
 // Base
 // =============================
+@import "base/layout";
 @import "base/typography";
 @import "base/base";
 
 // =============================
-// Components
+// Modules
 // =============================
-@import "components/alerts";
-@import "components/buttons";
-@import "components/code";
-@import "components/forms";
-@import "components/icons";
-@import "components/labels";
-@import "components/loading";
-@import "components/media";
-@import "components/navigation";
-@import "components/toggle";
+@import "modules/banner";
+@import "modules/button";
+@import "modules/code";
+@import "modules/grid";
+@import "modules/icon";
+@import "modules/media";
+@import "modules/section";
+
+@import "modules/header";
+@import "modules/nav";
+@import "modules/footer";

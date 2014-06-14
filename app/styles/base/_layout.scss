@@ -1,0 +1,14 @@
+// =============================
+// Set max-width and padding on containers
+// =============================
+
+$max-width-padding: calc((100% - 1200px) / 2);
+
+.page-width {
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @include breakpoint(lg) {
+    padding: 0 $max-width-padding;
+  }
+}

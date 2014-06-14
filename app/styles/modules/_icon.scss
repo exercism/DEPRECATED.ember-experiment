@@ -1,0 +1,36 @@
+.ico {
+  display: inline-block;
+}
+
+// icon sizes:
+// ico-128
+
+$sizes: 128;
+
+@each $size in $sizes {
+  .ico-#{$size} {
+    background-size: contain;
+    height: $size + px;
+    width: $size + px;
+  }
+}
+
+// Specific icon classes
+// `ico-*` class on element (e.g., `ico-feedback`)
+
+$icons: 
+feedback,
+practice,
+nitpick;
+
+@each $icon in $icons {
+  .ico-#{$icon} {
+    background: url('/assets/images/icon-#{$icon}.svg') 0 0 no-repeat;
+  }
+}
+
+
+// Logo
+.logo-alt {
+  margin-right: 3.0rem; // 30px
+}

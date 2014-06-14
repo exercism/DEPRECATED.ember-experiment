@@ -1,0 +1,22 @@
+.banner {
+  background: $red;
+  color: #fff;
+  padding-bottom: 6em;
+  padding-top: 6em;
+}
+
+.home-banner {
+  text-align: center;
+}
+
+.lead {
+  margin-bottom: 0;
+  margin-top: 1em; 
+}
+
+.tagline {
+  @include font-size(18);
+  color: $red_dark;
+  margin-bottom: 2em; 
+}
+
