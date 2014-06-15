@@ -1,0 +1,32 @@
+// =============================
+// Colors
+// =============================
+
+$blue:          #438eff;
+
+$red_light:     #f22a59;
+$red:           #d81d4e;
+$red_dark:      #770428;
+
+$gray:          #939598;
+$gray_medium:   #7f7f7f;
+$gray_dark:     #414042;
+$gray_darkest:  #262626;
+$gray_light:    #d8d8d8;
+$gray_lightest: #f2f2f2;
+
+
+// =============================
+// Paths
+// =============================
+
+$root_assets : "/assets" !default;
+$font_path   : $root_assets+"fonts" !default;
+$image_path  : $root_assets+"images" !default;
+
+// =============================
+// Type
+// =============================
+
+$font_brand: 'Source Code Pro';
+$font_body:   Arial, sans-serif;

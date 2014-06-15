@@ -1,0 +1,26 @@
+#site-nav {
+  display: inline-block;
+  float: right;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-left: 2.0rem; // 20px
+  }
+
+  a {
+    @include font-size(18);
+    color: $gray_medium;
+    font-family: $font_brand;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}

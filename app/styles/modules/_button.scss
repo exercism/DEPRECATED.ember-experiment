@@ -1,0 +1,16 @@
+.button {
+  @include font-size(14);
+  display: inline-block;
+  font-family: $font_brand;
+  font-weight: 400;
+  padding: 1em 2em;
+  text-transform: uppercase;
+}
+
+.button-alt {
+  background: $red_dark;
+  color: $red_light;
+  &:active {
+    background: darken($red_dark, 2%);
+  }
+}

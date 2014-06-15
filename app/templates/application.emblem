@@ -1,8 +1,23 @@
-#title Exercism
-
-nav
-  ul
-    li
-      link-to 'Explore' 'explore'
+header#site-header.page-width
+  a href="/"
+    img.logo-alt src="/assets/images/logo-alt.svg"
+  
+  nav#site-nav
+    ul
+      li
+        link-to 'Explore' 'explore'
 
 outlet
+
+footer#site-footer role="content-info"
+  section.home.section-block.page-width
+    img.logo-alt src="/assets/images/logo-alt.svg"
+    
+    %small © 2013 Katrina Owen  /  Source: github.com/exercism/exercism.io. Report bugs and submit feedback on GitHub. Email me at kytrinyx@exercism.io.
+
+  section.home.section-block.page-width.sponsors
+    %small Sponsored by
+
+    img.logo-sponsor src="/assets/images/rackspace.svg"
+
+    img.logo-sponsor src="/assets/images/sendgrid.svg"

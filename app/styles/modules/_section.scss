@@ -1,0 +1,13 @@
+.section-block {
+  border-bottom: 1px solid $gray_light;
+  padding-bottom: 2em; 
+  padding-top: 2em;
+
+  &.home {
+    text-align: center;
+  }
+}
+
+.section-alt {
+  background: $gray_lightest;
+}
