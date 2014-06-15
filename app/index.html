@@ -15,11 +15,13 @@
   </head>
   <body>
     <script>
-      window.ENV = {{ENV}};
+      window.ExercismENV = {{ENV}};
+      window.EmberENV = window.ExercismENV.EmberENV;
     </script>
+    <script src="assets/vendor.js"></script>
     <script src="assets/exercism.js"></script>
     <script>
-      window.Exercism = require('exercism/app')['default'].create(ENV.APP);
+      window.Exercism = require('exercism/app')['default'].create(ExercismENV.APP);
     </script>
   </body>
 </html>

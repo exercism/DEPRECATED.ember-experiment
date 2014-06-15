@@ -1,5 +1,5 @@
 Router = Ember.Router.extend
-  location: ENV.locationType
+  location: ExercismENV.locationType
 
 Router.map ->
   @route 'welcome', path: '/'

@@ -9,6 +9,7 @@
 
     {{BASE_TAG}}
 
+    <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/exercism.css">
     <link rel="stylesheet" href="assets/mocha.css">
     <style>
@@ -59,9 +60,11 @@
     <div id="hide-testing-container">Show</div>
 
     <script>
-      window.ENV = {{ENV}};
+      window.ExercismENV = {{ENV}};
+      window.EmberENV = window.ExercismENV.EmberENV;
     </script>
     <script src="assets/mocha.js"></script>
+    <script src="assets/vendor.js"></script>
     <script src="assets/exercism.js"></script>
     <script src="assets/adapter-qunit.js"></script>
     <script src="assets/chai.js"></script>
