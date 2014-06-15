@@ -2,4 +2,4 @@ h1 Problems in All Languages
 
 ul
   li
-    link-to 'Problems in Ruby' 'problems.language' 'ruby'
+    link-to 'Problems in Ruby' 'language' 'ruby'

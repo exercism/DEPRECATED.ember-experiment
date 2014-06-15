@@ -6,12 +6,11 @@ Router.map ->
 
   @route 'explore'
   @resource 'problems', ->
-    @route 'language', path: '/:lang'
+    @resource 'language', path: '/:lang', ->
+      @resource 'problem', path: '/:problem', ->
+        @route 'exercises'
 
-  @resource 'problem', path: '/problem/:lang/:problem', ->
-    @route 'exercises'
-
-  @resource 'exercise', path: '/exercise/:exercise', ->
+  @resource 'exercises', path: '/exercises/:exercise', ->
     @route 'iteration', path: '/:iteration'
 
 

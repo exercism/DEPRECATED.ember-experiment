@@ -1,11 +1,17 @@
 h1 Explore
 
 ul
-  li
-    link-to 'Ruby' 'problems.language' 'ruby'
-  li
-    link-to 'JavaScript' 'problems.language' 'javascript'
-  li
-    link-to 'Go' 'problems.language' 'go'
-  li
-    link-to 'Elixir' 'problems.language' 'elixir'
+  each featured
+    li= link-to language 'language' slug
+
+h2 Active Languages
+
+ul
+  each active
+    li= link-to language 'language' slug
+
+h2 Coming Soon
+
+ul
+  each inactive
+    li= language

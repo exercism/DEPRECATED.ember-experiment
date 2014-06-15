@@ -1,5 +1,5 @@
-h2 #{lang} exercises for #{problem}
+h2 #{track} exercises for #{id}
 
 ul
   li
-    link-to "Someone's Exercise" 'exercise' 'someones-exercise'
+    link-to "Someone's Exercise" 'exercises' 'someones-exercise'

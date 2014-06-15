@@ -1,0 +1,7 @@
+h1 problems in #{language}
+
+ul
+
+each problem in problems
+  li= link-to problem.name 'problem' problem.id
+

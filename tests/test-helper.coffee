@@ -31,3 +31,63 @@ $(document).ready ->
   ]
 
   mocha.run()
+
+window.exFixtures = {}
+window.exFixtures.tracks = JSON.parse """
+{
+  "tracks": [
+    {
+      "active": true,
+      "id": "elixir",
+      "language": "Elixir",
+      "problems": [
+        "bob"
+      ],
+      "slug": "elixir"
+    },
+    {
+      "active": true,
+      "id": "go",
+      "language": "Go",
+      "problems": [
+        "bob"
+      ],
+      "slug": "go"
+    },
+    {
+      "active": true,
+      "id": "javascript",
+      "language": "JavaScript",
+      "problems": [
+        "bob"
+      ],
+      "slug": "javascript"
+    },
+    {
+      "active": true,
+      "id": "python",
+      "language": "Python",
+      "problems": [
+        "bob"
+      ],
+      "slug": "python"
+    },
+    {
+      "active": true,
+      "id": "ruby",
+      "language": "Ruby",
+      "problems": [
+        "bob"
+      ],
+      "slug": "ruby"
+    },
+    {
+      "active": false,
+      "id": "rust",
+      "language": "Rust",
+      "problems": [],
+      "slug": "rust"
+    }
+  ]
+}
+"""

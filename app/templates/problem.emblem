@@ -1,9 +1,9 @@
-h1 #{problem} in #{lang}
+h1 #{id} in #{track}
 
 ul
   li
-    link-to 'Details' 'problem' lang problem
+    link-to 'Details' 'problem' track id
   li
-    link-to 'Exercises' 'problem.exercises' lang problem
+    link-to 'Exercises' 'problem.exercises' track id
 
 outlet
