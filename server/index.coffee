@@ -9,7 +9,7 @@
 express    = require('express')
 bodyParser = require('body-parser')
 globSync   = require('glob').sync
-routes     = globSync('./routes/*.js', { cwd: __dirname }).map(require)
+routes     = globSync('./routes/*.coffee', { cwd: __dirname }).map(require)
 
 module.exports = (emberCLIMiddleware) ->
   app = express()
