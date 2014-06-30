@@ -29,6 +29,9 @@
     "loom-generators-ember-appkit": "^1.1.1",
     "originate": "0.1.5",
     "broccoli-merge-trees": "^0.1.3",
-    "broccoli-static-compiler": "^0.1.4"
+    "broccoli-static-compiler": "^0.1.4",
+
+    "pkgcloud": "^0.9.6",
+    "glob": "^4.0.3"
   }
 }

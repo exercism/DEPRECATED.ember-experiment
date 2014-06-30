@@ -1,0 +1,108 @@
+#!/usr/bin/env node
+'use strict';
+
+var pkgcloud = require('pkgcloud'),
+    fs       = require('fs'),
+    glob     = require('glob');
+
+var args = process.argv.slice(2);
+
+if( args.length != 3 ) {
+  console.log('You must supply bin/deploy with three arguments.');
+  console.log('bin/deploy exercism-container rackspace-username rackspace-api-key');
+  process.exit(1);
+}
+
+var container   = args[0],
+    username    = args[1],
+    apiKey      = args[2],
+    deployDir   = 'dist',
+    deployFiles = ['index.html',
+                   'assets/exercism.css',
+                   'assets/exercism.js',
+                   'assets/vendor.css',
+                   'assets/vendor.js',
+                   'assets/images/**/*.*'];
+
+var allFiles = deployFiles.map(function(pattern) {
+  return glob.sync(deployDir + '/' + pattern);
+}).reduce(function(a, b) {
+  // Flatten
+  return a.concat(b);
+}, []);
+
+var client = pkgcloud.storage.createClient({
+  provider: 'rackspace',
+  username: username,
+  apiKey: apiKey,
+  region: 'ORD'
+});
+
+var backupCurrentContainer = function(done) {
+  var backupContainer = container + '-backup-' + Date.now().toString();
+  client.createContainer(backupContainer, function(err, newContainer) {
+    client.getFiles(container, function(err, files) {
+      var totalFiles = files.length,
+          processedFiles = 0;
+
+      files.forEach(function(file) {
+        var download = client.download({
+          container: container,
+          remote: file.name
+        });
+
+        download.pipe(client.upload({
+          container: backupContainer,
+          remote: file.name
+        }, function(err, result) {
+          processedFiles++;
+          console.log('Copied', file.name, processedFiles, 'of', totalFiles);
+          if( processedFiles == totalFiles ) done();
+        }));
+      });
+    });
+  });
+};
+
+
+var emptyCurrentContainer = function(done) {
+  client.getFiles(container, function(err, files) {
+    var totalFiles = files.length,
+        processedFiles = 0;
+
+    files.forEach(function(file) {
+      client.removeFile(container, file, function(err, result) {
+        processedFiles++;
+        console.log('Removed', file.name, processedFiles, 'of', totalFiles);
+        if( processedFiles == totalFiles ) done();
+      });
+    });
+  });
+};
+
+
+var uploadNewFiles = function() {
+  allFiles.forEach(function(file) {
+    if( !fs.lstatSync(file).isDirectory() ) {
+      var fileStream = fs.createReadStream(file),
+          remotePath = file.replace('dist/', '');
+
+      fileStream.pipe(client.upload({
+        container: container,
+        remote: remotePath
+      }, function(err, result) {
+        console.log('Deployed', remotePath);
+      }));
+    }
+  });
+};
+
+// Deployment happens in stages:
+// 1. Backup existing container
+// 2. Remove files from container
+// 3. Upload new files from dist/ to container
+backupCurrentContainer(function() {
+  emptyCurrentContainer(function() {
+    uploadNewFiles();
+  });
+});
