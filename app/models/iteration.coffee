@@ -1,4 +1,4 @@
-IterationModel = DS.Model.extend
+model = DS.Model.extend
   exercise: DS.belongsTo('exercise', inverse: 'iterations')
 
-`export default IterationModel;`
+`export default model;`

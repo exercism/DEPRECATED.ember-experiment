@@ -1,0 +1,5 @@
+h1 problems in #{id}
+
+ul
+  each problem in problems
+    li= link-to problem.slug 'problem' problem.slug

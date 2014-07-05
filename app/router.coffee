@@ -6,7 +6,7 @@ Router.map ->
 
   @route 'explore'
   @resource 'problems', ->
-    @resource 'language', path: '/:lang', ->
+    @resource 'track', path: '/:track_id', ->
       @resource 'problem', path: '/:problem', ->
         @route 'exercises'
 

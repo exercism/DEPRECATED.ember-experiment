@@ -1,1 +1,8 @@
-| README and test file
+h2 Files
+
+dl
+  / Can likely be replaced when Ember/handlebars supports
+  / object iteration with @key and this
+  each file in files
+    dt= file.name
+    dd= file.body

@@ -1,4 +1,4 @@
-h2 #{track} exercises for #{id}
+h2 #{track_id} exercises for #{slug}
 
 ul
   li

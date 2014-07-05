@@ -2,13 +2,13 @@ h1 Explore
 
 ul
   each featured
-    li= link-to language 'language' slug
+    li= link-to language 'track' slug
 
 h2 Active Languages
 
 ul
   each active
-    li= link-to language 'language' slug
+    li= link-to language 'track' slug
 
 h2 Coming Soon
 

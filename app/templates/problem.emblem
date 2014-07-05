@@ -1,9 +1,9 @@
-h1 #{id} in #{track}
+h1 #{slug} in #{track_id}
 
 ul
   li
-    link-to 'Details' 'problem' track id
+    link-to 'Details' 'problem' track_id slug
   li
-    link-to 'Exercises' 'problem.exercises' track id
+    link-to 'Exercises' 'problem.exercises' track_id slug
 
 outlet

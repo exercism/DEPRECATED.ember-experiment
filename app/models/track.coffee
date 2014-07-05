@@ -1,5 +1,5 @@
 model = DS.Model.extend
-  problems: DS.attr()
+  problems: DS.hasMany('problem', inverse: 'track')
   language: DS.attr('string')
   slug: DS.attr('string')
   active: DS.attr('boolean')
