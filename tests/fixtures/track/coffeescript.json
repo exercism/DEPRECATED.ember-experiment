@@ -1,0 +1,34 @@
+{
+  "track": {
+    "active": true,
+    "id": "coffeescript",
+    "language": "CoffeeScript",
+    "problems": [
+      "bob",
+      "word-count"
+    ],
+    "slug": "coffeescript"
+  },
+  "problems": [
+    {
+      "id": "coffeescript/bob",
+      "track_id": "coffeescript",
+      "slug": "bob",
+      "files": {
+        "bob_test.spec.coffee": "Bob = require \"./bob\"\ndescribe \"Bob\", ->\n  bob = new Bob()\n  it \"stating something\", ->\n    result = bob.hey \"Tom-ay-to, tom-aaaah-to.\"\n    expect(result).toEqual \"Whatever.\"\n\n  xit \"shouting\", ->\n    result = bob.hey \"WATCH OUT!\"\n    expect(result).toEqual \"Woah, chill out!\"\n\n  xit \"asking a question\", ->\n    result = bob.hey \"Does this cryogenic chamber make me look fat?\"\n    expect(result).toEqual \"Sure.\"\n\n  xit \"talking forcefully\", ->\n    result = bob.hey \"Let's go make out behind the gym!\"\n    expect(result).toEqual \"Whatever.\"\n\n  xit \"using acronyms in regular speech\", ->\n    result = bob.hey \"It's OK if you don't want to go to the DMV.\"\n    expect(result).toEqual \"Whatever.\"\n\n  xit \"forceful questions\", ->\n    result = bob.hey \"WHAT THE HELL WERE YOU THINKING?\"\n    expect(result).toEqual \"Woah, chill out!\"\n\n  xit \"shouting numbers\", ->\n    result = bob.hey \"1, 2, 3 GO!\"\n    expect(result).toEqual \"Woah, chill out!\"\n\n  xit \"only number\", ->\n    result = bob.hey \"1, 2, 3\"\n    expect(result).toEqual \"Whatever.\"\n\n  xit \"shouting with special characters\", ->\n    result = bob.hey \"ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!\"\n    expect(result).toEqual \"Woah, chill out!\"\n\n  xit \"shouting with no exclamation mark\", ->\n    result = bob.hey \"I HATE YOU\"\n    expect(result).toEqual \"Woah, chill out!\"\n\n  xit \"statement containing question mark\", ->\n    result = bob.hey \"Ending with a ? means a question.\"\n    expect(result).toEqual \"Whatever.\"\n\n  xit \"prattling on\", ->\n    result = bob.hey \"Wait! Hang on.  Are you going to be OK?\"\n    expect(result).toEqual \"Sure.\"\n\n  xit \"silence\", ->\n    result = bob.hey \"\"\n    expect(result).toEqual \"Fine. Be that way!\"\n\n  xit \"prolonged silence\", ->\n    result = bob.hey \"   \"\n    expect(result).toEqual \"Fine. Be that way!\"\n",
+        "README.md": "# Bob\n\nBob is a lackadaisical teenager. In conversation, his responses are very limited.\n\nBob answers 'Sure.' if you ask him a question.\n\nHe answers 'Woah, chill out!' if you yell at him.\n\nHe says 'Fine. Be that way!' if you address him without actually saying anything.\n\nHe answers 'Whatever.' to anything else.\n\n## Instructions\n\nRun the test file, and fix each of the errors in turn. When you get the first test to pass, go to the first pending or skipped test, and make that pass as well. When all of the tests are passing, feel free to submit.\n\nRemember that passing code is just the first step. The goal is to work towards a solution that is as readable and expressive as you can make it.\n\nPlease make your solution as general as possible. Good code doesn't just pass the test suite, it works with any input that fits the specification.\n\nHave fun!\n\n\n\n## Source\n\nInspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial. [view source](http://pine.fm/LearnToProgram/?Chapter=06)\n"
+      },
+      "fresh": true
+    },
+    {
+      "id": "coffeescript/word-count",
+      "track_id": "coffeescript",
+      "slug": "word-count",
+      "files": {
+        "word-count_test.spec.coffee": "Words = require \"./words\"\n\ndescribe \"Words\", ->\n  it \"counts one word\", ->\n    words = new Words \"word\"\n    expect(words.count).toEqual\n      word: 1\n\n  xit \"counts one of each\", ->\n    words = new Words \"one of each\"\n    expect(words.count).toEqual\n      one: 1\n      of: 1\n      each: 1\n\n  xit \"counts multiple occurrences\", ->\n    words = new Words \"one fish two fish red fish blue fish\"\n    expect(words.count).toEqual\n      one: 1\n      fish: 4\n      two: 1\n      red: 1\n      blue: 1\n\n  xit \"ignores punctuation\", ->\n    words = new Words \"car : carpet as java : javascript!!&@$%^&\"\n    expect(words.count).toEqual\n      car: 1\n      carpet: 1\n      as: 1\n      java: 1\n      javascript: 1\n\n  xit \"includes numbers\", ->\n    words = new Words \"testing, 1, 2 testing\"\n    expect(words.count).toEqual\n      testing: 2\n      1: 1\n      2: 1\n\n  xit \"normalizes case\", ->\n    words = new Words \"go Go GO\"\n    expect(words.count).toEqual\n      go: 3\n",
+        "README.md": "# Word Count\n\nWrite a program that given a phrase can count the occurrences of each word in that phrase.\n\nFor example for the input `\"olly olly in come free\"`\n\n```plain\nolly: 2\nin: 1\ncome: 1\nfree: 1\n```\n\n\n\n## Source\n\nThe golang tour [view source](http://tour.golang.org)\n"
+      },
+      "fresh": true
+    }
+  ]
+}

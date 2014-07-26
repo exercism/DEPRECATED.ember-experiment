@@ -32,7 +32,7 @@
     "broccoli-static-compiler": "^0.1.4",
 
     "pkgcloud": "^0.9.6",
-    "glob": "^4.0.3"
+    "glob": "^4.0.3",
     "request": "2.36.0"
   }
 }

@@ -68,7 +68,7 @@ var chaiFiles = pickFiles('vendor', {
 });
 
 var sinonFiles = pickFiles('vendor', {
-  srcDir: '/sinon/lib',
+  srcDir: '/sinonjs-built/pkg',
   files: [
     'sinon.js'
   ],

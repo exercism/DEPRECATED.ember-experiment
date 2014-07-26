@@ -1,7 +1,7 @@
 `import { test, moduleForModel } from 'ember-qunit';`
 
 moduleForModel 'problem', 'Problem Model',
-  needs: ['model:exercise']
+  needs: ['model:track', 'model:exercise']
 
 test 'it has many exercises', ->
   Ember.run =>

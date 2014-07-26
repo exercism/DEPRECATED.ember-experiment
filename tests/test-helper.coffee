@@ -33,61 +33,62 @@ $(document).ready ->
   mocha.run()
 
 window.exFixtures = {}
-window.exFixtures.tracks = JSON.parse """
+window.exFixtures.tracks = """
 {
   "tracks": [
     {
       "active": true,
-      "id": "elixir",
-      "language": "Elixir",
+      "id": "coffeescript",
+      "language": "CoffeeScript",
       "problems": [
-        "bob"
+        "bob",
+        "word-count"
       ],
-      "slug": "elixir"
-    },
-    {
-      "active": true,
-      "id": "go",
-      "language": "Go",
-      "problems": [
-        "bob"
-      ],
-      "slug": "go"
-    },
-    {
-      "active": true,
-      "id": "javascript",
-      "language": "JavaScript",
-      "problems": [
-        "bob"
-      ],
-      "slug": "javascript"
-    },
-    {
-      "active": true,
-      "id": "python",
-      "language": "Python",
-      "problems": [
-        "bob"
-      ],
-      "slug": "python"
-    },
-    {
-      "active": true,
-      "id": "ruby",
-      "language": "Ruby",
-      "problems": [
-        "bob"
-      ],
-      "slug": "ruby"
-    },
-    {
-      "active": false,
-      "id": "rust",
-      "language": "Rust",
-      "problems": [],
-      "slug": "rust"
+      "slug": "coffeescript"
     }
   ]
 }
 """
+
+window.exFixtures.track = """
+{
+  "track": {
+    "active": true,
+    "id": "coffeescript",
+    "language": "CoffeeScript",
+    "problems": [
+      "coffeescript/bob",
+      "coffeescript/word-count"
+    ],
+    "slug": "coffeescript"
+  },
+  "problems": [
+    {
+      "id": "coffeescript/bob",
+      "track_id": "coffeescript",
+      "slug": "bob",
+      "files": {
+        "README.md": "Bob is a lackadaisical teenager."
+      },
+      "fresh": true
+    },
+    {
+      "id": "coffeescript/word-count",
+      "track_id": "coffeescript",
+      "slug": "word-count",
+      "files": {
+        "README.md": "Write a program that given a phrase"
+      },
+      "fresh": true
+    }
+  ]
+}
+"""
+
+server = sinon.fakeServer.create()
+server.autoRespond = true
+# server.autoRespondAfter = 100
+header = { "Content-Type": "application/json" }
+
+server.respondWith("GET", "/x-api/tracks", [ 200, header, window.exFixtures.tracks ])
+server.respondWith("GET", "/x-api/tracks/coffeescript", [ 200, header, window.exFixtures.track ])
