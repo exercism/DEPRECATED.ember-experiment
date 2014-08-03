@@ -1,11 +1,13 @@
 module.exports = (environment) ->
   ENV =
+    environment: environment
     baseURL: '/'
     locationType: 'auto'
-    FEATURES: {
-      # Here you can enable experimental features on an ember canary build
-      # e.g. 'with-controller': true
-    }
+    EmberENV:
+      FEATURES: {
+        # Here you can enable experimental features on an ember canary build
+        # e.g. 'with-controller': true
+      }
 
     APP: {
       # Here you can pass flags/options to your application instance
@@ -22,6 +24,9 @@ module.exports = (environment) ->
     # ENV.APP.LOG_TRANSITIONS = true
     # ENV.APP.LOG_TRANSITIONS_INTERNAL = true
     ENV.APP.LOG_VIEW_LOOKUPS = true
+
+
+  # if environment == 'test'
 
   # if environment == 'production'
 

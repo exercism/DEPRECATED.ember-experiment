@@ -2,6 +2,7 @@
 
 Application = require('exercism/app')['default']
 Router = require('exercism/router')['default']
+`import Ember from 'ember';`
 
 startApp = (attrs) ->
   App = null
