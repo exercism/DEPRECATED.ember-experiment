@@ -1,22 +1,12 @@
-var bodyParser, express, globSync, routes;
+var bodyParser = require('body-parser');
+var globSync   = require('glob').sync;
+var routes     = globSync('./routes/**/*.js', { cwd: __dirname }).map(require);
 
-express = require('express');
+module.exports = function(app) {
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
 
-bodyParser = require('body-parser');
-
-globSync = require('glob').sync;
-
-routes = globSync('./routes/*.js', {
-  cwd: __dirname
-}).map(require);
-
-module.exports = function(emberCLIMiddleware) {
-  var app;
-  app = express();
-  app.use(bodyParser());
-  routes.forEach(function(route) {
-    return route(app);
-  });
-  app.use(emberCLIMiddleware);
-  return app;
+  routes.forEach(function(route) { route(app); });
 };

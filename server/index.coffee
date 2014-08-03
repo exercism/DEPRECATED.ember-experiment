@@ -6,16 +6,12 @@
 #     res.send('hello')
 #
 
-express    = require('express')
 bodyParser = require('body-parser')
 globSync   = require('glob').sync
-routes     = globSync('./routes/*.coffee', { cwd: __dirname }).map(require)
+routes     = globSync('./routes/**/*.coffee', { cwd: __dirname }).map(require)
 
 module.exports = (emberCLIMiddleware) ->
-  app = express()
-  app.use(bodyParser())
+  app.use(bodyParser.json())
+  app.use(bodyParser.urlencoded(extended: true))
 
   routes.forEach (route) -> route(app)
-  app.use(emberCLIMiddleware)
-
-  app
