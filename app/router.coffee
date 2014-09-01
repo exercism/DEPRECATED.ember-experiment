@@ -4,7 +4,7 @@ Router = Ember.Router.extend
   location: ExercismENV.locationType
 
 Router.map ->
-  @route 'welcome', path: '/'
+  @route 'root', path: '/'
 
   @route 'explore'
   @resource 'problems', ->
