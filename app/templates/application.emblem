@@ -7,7 +7,7 @@ header#site-header.page-width
       li
         link-to 'Explore' 'explore'
 
-outlet
+animated-outlet name="main"
 
 footer#site-footer role="content-info"
   section.home.section-block.page-width

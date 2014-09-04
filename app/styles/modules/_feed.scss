@@ -1,0 +1,58 @@
+ul.feed {
+  margin-left: 10px;
+
+  li {
+    margin-bottom: 15px;
+    padding: 5px 20px;
+    border-left: 2px solid #d81d4e;
+    list-style-type: none;
+    position: relative;
+
+    a {
+      // Circle itself
+      display: block;
+      position: absolute;
+      height: 12px;
+      width: 12px;
+      left: -29px;
+      top: 29%;
+      background-color: #d81d4e;
+      border-radius: 12px;
+
+      // Circle around link on hover
+      &:before {
+        display: block;
+        position: absolute;
+        content: '';
+        height: 7px;
+        width: 7px;
+        border-radius: 7px;
+        top: 0;
+        left: 0;
+        border: 2px solid #d81d4e;
+        transition: all 200ms;
+      }
+
+      &:hover {
+        &:before {
+          top: -4px;
+          left: -4px;
+          height: 16px;
+          width: 16px;
+          border-radius: 16px;
+        }
+      }
+
+      // Connecting line between circle and bar
+      &:after {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 15px;
+        right: -15px;
+        top: 42%;
+        background-color: #d81d4e;
+      }
+    }
+  }
+}
