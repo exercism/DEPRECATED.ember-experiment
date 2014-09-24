@@ -12,8 +12,9 @@ Router.map ->
       @resource 'problem', path: '/:problem', ->
         @route 'exercises'
 
-  @resource 'exercises', path: '/exercises/:exercise', ->
-    @route 'iteration', path: '/:iteration'
+  @resource 'exercises', path: '/exercises/:exercise_id', ->
+    @resource 'nitpick', path: '/nitpick/:nitpick_id'
+    @resource 'iteration', path: '/iteration/:iteration_id'
 
 
 `export default Router;`

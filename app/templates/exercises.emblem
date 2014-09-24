@@ -1,10 +1,9 @@
-h1 #{exercise}
+h1 #{id}
 
 h4 Iterations
 ul
-  li
-    link-to '1' 'exercises.iteration' exercise '1'
-  li
-    link-to '2' 'exercises.iteration' exercise '2'
+  each iteration in iterations
+    li
+      link-to iteration.id 'iteration' iteration.exercise.id iteration.id
 
 outlet

@@ -1,5 +1,5 @@
 route = Ember.Route.extend
-  beforeModel: ->
-    @transitionTo('exercises.iteration', '1')
+  afterModel: (model) ->
+    @transitionTo('iteration', model.get('iterations.content')[0])
 
 `export default route;`

@@ -51,9 +51,6 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
 
 app.import('vendor/normalize-css/normalize.css');
 
-app.import('vendor/ember-animated-outlet/dist/ember-animated-outlet.js');
-app.import('vendor/ember-animated-outlet/dist/ember-animated-outlet.css');
-
 var mochaFiles = pickFiles('vendor', {
   srcDir: '/mocha',
   files: [

@@ -7,7 +7,10 @@ header#site-header.page-width
       li
         link-to 'Explore' 'explore'
 
-animated-outlet name="main"
+/ span ---------------------------------
+/ liquid-outlet
+outlet
+/ span ---------------------------------
 
 footer#site-footer role="content-info"
   section.home.section-block.page-width

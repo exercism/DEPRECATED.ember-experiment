@@ -22,8 +22,6 @@
     "chai": "~0.3.1",
     "sinonjs-built": "~1.7.3",
     "sinon-chai": "~2.5.0",
-    "ember-mocha-adapter": "https://github.com/WMeldon/ember-mocha-adapter.git#qunit",
-
-    "ember-animated-outlet": "v1.0.0-beta.3"
+    "ember-mocha-adapter": "https://github.com/WMeldon/ember-mocha-adapter.git#qunit"
   }
 }

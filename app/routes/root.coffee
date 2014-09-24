@@ -7,9 +7,11 @@ route = Ember.Route.extend
     else
       @render('welcome')
 
+  beforeModel: ->
+    @get('feed').fetch(@store)
+
   model: ->
-    if loggedIn
-      @get('feed')
+    @store.find('event') if loggedIn
 
   setupController: (controller, model) ->
     if loggedIn

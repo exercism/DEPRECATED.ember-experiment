@@ -1,3 +1,6 @@
 ul.feed
-  each events
-    li #{link-to-animated "explore" animations="main:slideRight" | } #{type}
+  each
+    if isNitpick
+      li #{link-to "" "nitpick" nitpick.exercise.id nitpick} #{type}
+    else
+      li #{link-to "explore" | } #{type}
